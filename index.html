@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Dzaky — TKJ Student & Network Enthusiast.">
+  <meta name="theme-color" content="#f6f8fb">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Dzaky — Personal Portfolio">
+  <meta property="og:description" content="A clean space sharing my journey in TKJ, Networking, and IT systems.">
+  <meta property="og:type" content="website">
+
+  <title>Dzaky — TKJ & Networking</title>
+
+  <!-- Fonts: Inter for UI text, JetBrains Mono for network/technical labels -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <!-- Minimalist background: grid + slow scanning sweep -->
+  <div class="bg-grid"></div>
+  <div class="bg-scan"></div>
+
+  <!-- Navigation -->
+  <header class="nav-container">
+    <div class="nav-inner">
+      <a href="#top" class="logo">Dzaky<span>.</span> <span class="status-dot" aria-hidden="true"></span></a>
+      <nav class="desktop-nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#guestbook">Guestbook</a>
+      </nav>
+      <a href="#guestbook" class="btn-primary small">Leave a Message</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero Section -->
+    <section class="hero wrap">
+      <div class="hero-content reveal">
+        <div class="badge"><span class="status-dot" aria-hidden="true"></span> TKJ Student • SMKN 2 Kota Bekasi</div>
+        <h1>Hi, I'm Dzaky.<br>I build and break <span class="type-target mono">networks.</span></h1>
+        <p class="lead">A minimalist corner on the internet where I document my journey in computer networking, server administration, and figuring out how systems communicate.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">See My Work</a>
+          <a href="#about" class="btn-secondary">Get to Know Me</a>
+        </div>
+      </div>
+
+      <!-- Network visualization: nodes connected with traveling data packets -->
+      <div class="hero-art reveal-right" aria-hidden="true">
+        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <!-- links -->
+          <path id="linkA" class="net-link" d="M200,200 L110,120" />
+          <path id="linkB" class="net-link" d="M200,200 L300,140" />
+          <path id="linkC" class="net-link" d="M200,200 L280,290" />
+          <path id="linkD" class="net-link" d="M200,200 L100,280" />
+
+          <!-- traveling packets -->
+          <circle class="packet" r="4">
+            <animateMotion dur="2.6s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear">
+              <mpath href="#linkA" />
+            </animateMotion>
+          </circle>
+          <circle class="packet" r="4">
+            <animateMotion dur="3.1s" begin="0.5s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear">
+              <mpath href="#linkB" />
+            </animateMotion>
+          </circle>
+          <circle class="packet" r="4">
+            <animateMotion dur="2.3s" begin="1s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear">
+              <mpath href="#linkC" />
+            </animateMotion>
+          </circle>
+          <circle class="packet" r="4">
+            <animateMotion dur="2.9s" begin="1.4s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear">
+              <mpath href="#linkD" />
+            </animateMotion>
+          </circle>
+
+          <!-- outer nodes -->
+          <g class="net-node">
+            <circle class="net-pulse" cx="110" cy="120" r="14" />
+            <circle class="net-node-ring" cx="110" cy="120" r="14" />
+            <circle class="net-node-core" cx="110" cy="120" r="4" />
+          </g>
+          <g class="net-node">
+            <circle class="net-pulse" cx="300" cy="140" r="18" style="animation-delay:.4s" />
+            <circle class="net-node-ring" cx="300" cy="140" r="18" />
+            <circle class="net-node-core" cx="300" cy="140" r="5" />
+          </g>
+          <g class="net-node">
+            <circle class="net-pulse" cx="280" cy="290" r="11" style="animation-delay:.8s" />
+            <circle class="net-node-ring" cx="280" cy="290" r="11" />
+            <circle class="net-node-core" cx="280" cy="290" r="4" />
+          </g>
+          <g class="net-node">
+            <circle class="net-pulse" cx="100" cy="280" r="15" style="animation-delay:1.2s" />
+            <circle class="net-node-ring" cx="100" cy="280" r="15" />
+            <circle class="net-node-core" cx="100" cy="280" r="4" />
+          </g>
+
+          <!-- central node -->
+          <g class="net-node central">
+            <circle class="net-pulse" cx="200" cy="200" r="32" />
+            <circle class="net-node-ring" cx="200" cy="200" r="32" />
+            <circle class="net-node-core" cx="200" cy="200" r="8" />
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about wrap reveal">
+      <div class="section-header">
+        <span class="section-tag mono">whoami</span>
+        <h2>About Me</h2>
+        <div class="line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Hello! My name is <strong>Dzaky Yoga Novanto</strong>. I am currently a 17-year-old student majoring in Teknik Komputer dan Jaringan (TKJ) at SMKN 2 Kota Bekasi.</p>
+          <p>My interest in computers started simple—spending time at internet cafes. But that curiosity quickly evolved into wanting to know exactly how data travels from one point to another.</p>
+          <p>Right now, my focus is on mastering network infrastructures, Linux servers, and the fundamentals of cybersecurity.</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <h3>Focus</h3>
+            <p>Networking &amp; Linux</p>
+          </div>
+          <div class="stat-card">
+            <h3>Location</h3>
+            <p>Bekasi, Indonesia</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section — presented as a status panel -->
+    <section id="skills" class="skills wrap reveal">
+      <div class="section-header">
+        <span class="section-tag mono">status</span>
+        <h2>Technical Arsenal</h2>
+        <div class="line"></div>
+      </div>
+      <div class="skills-grid stagger">
+        <div class="skill-category">
+          <h3>Networking</h3>
+          <ul>
+            <li><span class="port mono">rtr</span> IP Routing &amp; Subnetting</li>
+            <li><span class="port mono">53</span> DNS &amp; DHCP Configuration</li>
+            <li><span class="port mono">net</span> Network Troubleshooting</li>
+            <li><span class="port mono">phy</span> Cabling Infrastructure</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>Systems &amp; Server</h3>
+          <ul>
+            <li><span class="port mono">sh</span> Linux Administration</li>
+            <li><span class="port mono">cfg</span> System Configuration</li>
+            <li><span class="port mono">22</span> SSH &amp; Permissions</li>
+            <li><span class="port mono">sec</span> Basic Server Hardening</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>Security</h3>
+          <ul>
+            <li><span class="port mono">sec</span> Fundamental Cybersecurity</li>
+            <li><span class="port mono">def</span> Defensive Strategies</li>
+            <li><span class="port mono">lab</span> Isolated Lab Testing</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects wrap reveal">
+      <div class="section-header">
+        <span class="section-tag mono">deploy</span>
+        <h2>Featured Projects</h2>
+        <div class="line"></div>
+      </div>
+
+      <div class="project-list">
+        <article class="project-card">
+          <div class="project-content">
+            <span class="project-type">Web &amp; Infrastructure</span>
+            <h3>Technical Learning Lab</h3>
+            <p>A personal knowledge base for ITNSA, cybersecurity, and network cabling. Built as a centralized hub to document practical labs and technical explanations.</p>
+            <div class="tech-stack">
+              <span>Web</span><span>ITNSA</span><span>Networking</span>
+            </div>
+            <a href="https://lab-mini.vercel.app/" target="_blank" rel="noopener" class="project-link">
+              View Live Project
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-content">
+            <span class="project-type">Tools</span>
+            <h3>Cybersecurity Toolkit</h3>
+            <p>Browser-based utilities for networking, Linux commands, and basic cybersecurity operations designed for quick access during labs.</p>
+            <div class="tech-stack">
+              <span>Security</span><span>Tools</span><span>Web</span>
+            </div>
+            <a href="https://dzaky-novanto.github.io/Cybersecurity-Toolkit/" target="_blank" rel="noopener" class="project-link">
+              View Live Project
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <p class="projects-note">Tinggalin pesan dong... atau mau nanya lebih tentang ku. kirim disini ya <a href="#guestbook" style="color:var(--primary); font-weight:600;">Guestbook</a> atau <a href="mailto:dzakyyoganovanto11@gmail.com" style="color:var(--primary); font-weight:600;">email</a> insyaallah bakalan di bales.</p>
+    </section>
+
+    <!-- Guestbook Section -->
+    <section id="guestbook" class="guestbook wrap reveal">
+      <div class="section-header">
+        <span class="section-tag mono">msg</span>
+        <h2>Guestbook</h2>
+        <div class="line"></div>
+      </div>
+
+      <div class="guestbook-container">
+        <div class="guestbook-info">
+          <h3>Leave your mark</h3>
+          <p>Drop a message, advice, or just say hi! To prevent spam, you can only leave one message per device.</p>
+          <div class="guestbook-meta">
+            <span>→ stored locally on this device</span>
+            <span>→ max 150 characters</span>
+          </div>
+        </div>
+
+        <div class="guestbook-form-area">
+          <form id="messageForm" class="message-form">
+            <div class="input-group">
+              <input type="text" id="senderName" placeholder="Your Name" required maxlength="30">
+            </div>
+            <div class="input-group">
+              <textarea id="senderMessage" placeholder="Your Message..." required maxlength="150" rows="3"></textarea>
+              <span id="charCount" class="char-count mono">0/150</span>
+            </div>
+            <button type="submit" id="submitBtn" class="btn-primary">Post Message</button>
+            <p id="formStatus" class="form-status"></p>
+          </form>
+        </div>
+      </div>
+
+      <!-- Messages scroll past like a running ticker -->
+      <div class="marquee-wrap">
+        <div class="marquee-label"><span class="status-dot" aria-hidden="true"></span> live messages</div>
+        <p id="marqueeEmpty" class="marquee-empty">No messages yet. Be the first to say hi!</p>
+        <div class="marquee-track" id="marqueeTrack"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer wrap reveal">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>Dzaky<span>.</span></strong>
+        <p>Built with clean code &amp; networking in mind.</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/dzaky-novanto" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:dzakyyoganovanto@gmail.com" id="footer-contact">Email</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Dzaky Yoga Novanto. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+  </button>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
